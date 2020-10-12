@@ -466,7 +466,7 @@ class CfgVehicles
     {
         GARMSAR_BOYS
         displayName = "Rifleman (M70)";
-        uniformClass = "spagistan_uniform_am_fatigue_02_03";
+        uniformClass = "spagistan_uniform_am_fatigue_02_3";
     };
     class spagistan_soldier_garmsar_boys_rifleman_le: LOP_AM_Infantry_Rifleman_3
     {
