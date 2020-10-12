@@ -142,6 +142,19 @@ class CfgFactionClasses
         backpack_tf_faction_radio = "TFAR_mr3000";
         personal_tf_faction_radio = "TFAR_anprc148jem";
     };
+
+    class spagistan_faction_garmsar_boys
+    {
+        displayName = "Garmsar Boys' Academy";
+        priority = 1;
+        side = 1;
+        genericNames = "SpagistaniMen";
+        author = "Spagistan Mod Authors";
+        icon = "\spagistan\addons\spagistan_main\data\spagistan_logo_co.paa";
+        flag = "\spagistan\addons\spagistan_main\data\flags\spagistan_flag_spagistan_ca.paa";
+        backpack_tf_faction_radio = "TFAR_mr3000";
+        personal_tf_faction_radio = "TFAR_anprc148jem";
+    };
     
 };
 

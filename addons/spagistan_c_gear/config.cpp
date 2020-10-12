@@ -40,7 +40,14 @@ class CfgPatches
             "spagistan_patrolcap_spagpat",
             "spagistan_uniform_m10_spagpat",
             "spagistan_uniform_m10_spagpat_summer",
-            "spagistan_vest_md12_spagpat"
+            "spagistan_vest_md12_spagpat",
+            "spagistan_uniform_am_fatigue_01",
+            "spagistan_uniform_am_fatigue_02",
+            "spagistan_uniform_am_fatigue_02_3",
+            "spagistan_uniform_am_fatigue_03_2",
+            "spagistan_uniform_am_fatigue_03_3",
+            "spagistan_uniform_am_fatigue_04",
+            "spagistan_uniform_am_fatigue_04_3"
         };
     };
 };
@@ -61,6 +68,13 @@ class CfgWeapons
     class rhssaf_uniform_m10_digital_summer;
     class rhssaf_uniform_m93_oakleaf;
     class rhssaf_vest_md12_digital;
+    class LOP_U_AM_Fatigue_01;
+    class LOP_U_AM_Fatigue_02;
+    class LOP_U_AM_Fatigue_02_3;
+    class LOP_U_AM_Fatigue_03_2;
+    class LOP_U_AM_Fatigue_03_3;
+    class LOP_U_AM_Fatigue_04;
+    class LOP_U_AM_Fatigue_04_3;
 
     class spagistan_helmet_m97_spagpat: rhssaf_helmet_m97_woodland
     {
@@ -211,6 +225,85 @@ class CfgWeapons
         {
             "\spagistan\addons\spagistan_t_gear\data\spagistan_vest_md12_spagpat_ca.paa"
         };
+    };
+    
+    // PO ME Militia uniforms except blufor
+    class spagistan_uniform_am_fatigue_01: LOP_U_AM_Fatigue_01
+    {
+        scope = 1;
+        class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_life_scout";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_02: LOP_U_AM_Fatigue_02
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_eagle_scout";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_02_3: LOP_U_AM_Fatigue_02_3
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_rifleman_m70";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_03_2: LOP_U_AM_Fatigue_03_2
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_at";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_03_3: LOP_U_AM_Fatigue_03_3
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_grenadier";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_04: LOP_U_AM_Fatigue_04
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_arifleman";
+			containerClass="Supply120";
+			mass=120;
+		};
+    };
+    class spagistan_uniform_am_fatigue_04_3: LOP_U_AM_Fatigue_04_3
+    {
+        scope = 1;
+		class ItemInfo: UniformItem
+		{
+			uniformModel="-";
+			uniformClass="spagistan_soldier_garmsar_boys_rifleman_akm";
+			containerClass="Supply120";
+			mass=120;
+		};
     };
 };
 

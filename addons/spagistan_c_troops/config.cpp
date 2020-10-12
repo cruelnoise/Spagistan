@@ -1,4 +1,7 @@
 // note: sides are 0 = Red, 1 = Blue, 2 = Green, 3 = Civilian
+
+
+
 class CfgPatches
 {
     class spagistan_c_troops
@@ -10,7 +13,8 @@ class CfgPatches
         requiredAddons[] =
         {
             "rhssaf_c_troops",
-            "rhs_c_weapons"
+            "rhs_c_weapons",
+            "po_factions_me"
         };
         units[] =
         {
@@ -18,8 +22,22 @@ class CfgPatches
             "spagistan_soldier_spagistan_army_at",
             "spagistan_soldier_spagistan_army_grenadier",
             "spagistan_soldier_spagistan_army_arifleman",
-            "spagistan_soldier_spagistan_army_junion_corporal",
-            "spagistan_soldier_spagistan_army_sergeant"
+            "spagistan_soldier_spagistan_army_corporal",
+            "spagistan_soldier_spagistan_army_sergeant",
+            "spagistan_soldier_garmsar_boys_rifleman_akm",
+            "spagistan_soldier_garmsar_boys_rifleman_m70",
+            "spagistan_soldier_garmsar_boys_rifleman_le",
+            "spagistan_soldier_garmsar_boys_rifleman_aks74",
+            "spagistan_soldier_garmsar_boys_rifleman_aks74u",
+            "spagistan_soldier_garmsar_boys_rifleman_pm63",
+            "spagistan_soldier_garmsar_boys_rifleman_kar98k",
+            "spagistan_soldier_garmsar_boys_rifleman_m38",
+            "spagistan_soldier_garmsar_boys_rifleman_vz58",
+            "spagistan_soldier_garmsar_boys_at",
+            "spagistan_soldier_garmsar_boys_grenadier",
+            "spagistan_soldier_garmsar_boys_arifleman",
+            "spagistan_soldier_garmsar_boys_life_scout",
+            "spagistan_soldier_garmsar_boys_eagle_scout"
         };
         weapons[] = {};
     };
@@ -29,11 +47,11 @@ class CfgVehicles
 {
     // base class for Spagistan Armed Forces faction
     class rhssaf_soldier_m10_base;
-    class dummy_class_for_subclass_inheritance: rhssaf_soldier_m10_base
+    class dummy_rhssaf_soldier_m10_base: rhssaf_soldier_m10_base
     {
         class EventHandlers;
     };
-    class spagistan_soldier_spagistan_army_base: dummy_class_for_subclass_inheritance
+    class spagistan_soldier_spagistan_army_base: dummy_rhssaf_soldier_m10_base
     {
         dlc = "spagistan";
         author = "Spagistan Mod Authors";
@@ -397,6 +415,170 @@ class CfgVehicles
         icon = "iconManLeader";        
         backpack = "spagistan_TFAR_mr3000";
     };
+
+    // base class for Garmsar Boys' Academy faction
+    class LOP_AM_Infantry_Rifleman;
+    class LOP_AM_Infantry_Rifleman_2;
+    class LOP_AM_Infantry_Rifleman_3;
+    class LOP_AM_Infantry_Rifleman_4;
+    class LOP_AM_Infantry_Rifleman_5;
+    class LOP_AM_Infantry_Rifleman_6;
+    class LOP_AM_Infantry_Rifleman_7;
+    class LOP_AM_Infantry_Rifleman_8;
+    class LOP_AM_Infantry_Rifleman_9;
+    class LOP_AM_Infantry_AT;
+    class LOP_AM_Infantry_GL;
+    class LOP_AM_Infantry_AR;
+    class LOP_AM_Infantry_TL;
+    class LOP_AM_Infantry_SL;
+
+    #define GARMSAR_BOYS \
+    dlc = "spagistan"; \
+    author = "Spagistan Mod Authors"; \
+    scope = 2; \
+    side = 1; \
+    faction = "spagistan_faction_garmsar_boys"; \
+    genericNames = "SpagistaniMen"; \
+    linkedItems[] = \
+    { \
+        "spagistan_helmet_m97_spagpat", \
+        "ItemMap", \
+        "ItemCompass" \
+    }; \
+    headgearList[] = \
+        { \
+        "spagistan_helmet_m97_spagpat", \
+        "spagistan_helmet_m97_spagpat_black_ess", \
+        "spagistan_helmet_m97_spagpat_black_ess_bare" \
+        }; \
+    class EventHandlers \
+    { \
+        init="if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;};"; \
+    };
+
+    class spagistan_soldier_garmsar_boys_rifleman_akm: LOP_AM_Infantry_Rifleman
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (AKM)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_m70: LOP_AM_Infantry_Rifleman_2
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (M70)";
+        uniformClass = "spagistan_uniform_am_fatigue_02_03";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_le: LOP_AM_Infantry_Rifleman_3
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (Lee Enfield)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+        
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_aks74: LOP_AM_Infantry_Rifleman_4
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (AKS-74)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_aks74u: LOP_AM_Infantry_Rifleman_5
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (AKS-74U)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_pm63: LOP_AM_Infantry_Rifleman_6
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (PM-63)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_kar98k: LOP_AM_Infantry_Rifleman_7
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (Kar 98k)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_m38: LOP_AM_Infantry_Rifleman_8
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (M38)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_rifleman_vz58: LOP_AM_Infantry_Rifleman_9
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (Vz.58)";
+        uniformClass = "spagistan_uniform_am_fatigue_04_3";
+    };
+    class spagistan_soldier_garmsar_boys_at: LOP_AM_Infantry_AT
+    {
+        GARMSAR_BOYS
+        displayName = "Rifleman (RPG-7)";
+        uniformClass = "spagistan_uniform_am_fatigue_03_2";
+    };
+    class spagistan_soldier_garmsar_boys_grenadier: LOP_AM_Infantry_GL
+    {
+        GARMSAR_BOYS
+        displayName = "Grenadier";
+        uniformClass = "spagistan_uniform_am_fatigue_03_3";
+    };
+    class spagistan_soldier_garmsar_boys_arifleman: LOP_AM_Infantry_AR
+    {
+        GARMSAR_BOYS
+        displayName = "Automatic Rifleman";
+        uniformClass = "spagistan_uniform_am_fatigue_04";
+        magazines[]=
+        {
+            "rhs_100Rnd_762x54mmR",
+            "rhs_100Rnd_762x54mmR",
+            "rhs_mag_rdg2_white",
+            "rhs_mag_rdg2_black",
+            "rhs_mag_rgd5",
+            "rhs_mag_rgd5"
+        };
+        respawnMagazines[]=
+        {
+            "rhs_100Rnd_762x54mmR",
+            "rhs_100Rnd_762x54mmR",
+            "rhs_mag_rdg2_white",
+            "rhs_mag_rdg2_black",
+            "rhs_mag_rgd5",
+            "rhs_mag_rgd5"
+        };
+    };
+    class spagistan_soldier_garmsar_boys_life_scout: LOP_AM_Infantry_TL
+    {
+        GARMSAR_BOYS
+        displayName = "Life Scout";
+        uniformClass = "spagistan_uniform_am_fatigue_01";
+    };
+    class spagistan_soldier_garmsar_boys_eagle_scout: LOP_AM_Infantry_SL
+    {
+        displayName = "Eagle Scout";
+        headgearList[] = {"spagistan_beret_green_spagistan"};
+        dlc = "spagistan";
+        author = "Spagistan Mod Authors";
+        scope = 2;
+        side = 1;
+        faction = "spagistan_faction_garmsar_boys";
+        genericNames = "SpagistaniMen";
+        uniformClass = "spagistan_uniform_am_fatigue_02";
+        linkedItems[]=
+		{
+			"spagistan_beret_green_spagistan",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio"
+		};
+		respawnLinkedItems[]=
+		{
+			"spagistan_beret_green_spagistan",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio"
+		};
+    };
 };
 
 class CfgGroups
@@ -408,7 +590,7 @@ class CfgGroups
             name = "Spagistan Armed Forces";
             class spagistan_group_spagistan_army_infantry
             {
-                name = "Infantry Groups";
+                name = "Infantry";
                 aliveCategory = "Infantry";
                 class spagistan_group_spagistan_army_infantry_squad
                 {
@@ -477,6 +659,86 @@ class CfgGroups
                     {
                         side = 0;
                         vehicle = "spagistan_soldier_spagistan_army_at";
+                        rank = "PRIVATE";
+                        position[] = {10,-20,0};
+                    };
+                };
+            };
+        };
+        class spagistan_faction_garmsar_boys
+        {
+            name = "Garmsar Boys' Academy";
+            class spgistan_group_garmsar_boys_infantry
+            {
+                name = "Infantry";
+                aliveCategory = "Infantry";
+                class spagistan_group_garmsar_boys_infantry_squad
+                {
+                    name = "Rifle Squad";
+                    faction = "spagistan_faction_garmsar_boys";
+                    side = 1;
+                    rarityGroup = 0.75;
+                    icon = "\A3\ui_f\data\map\markers\nato\b_inf.paa";
+                    class Unit0
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_eagle_scout";
+                        rank = "SERGEANT";
+                        position[]={0,0,0};
+                    };
+                    class Unit1
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_life_scout";
+                        rank = "CORPORAL";
+                        position[] = {0,20,0};
+                    };
+                    class Unit2
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_arifleman";
+                        rank = "PRIVATE";
+                        position[] = {5,15,0};
+                    };
+                    class Unit3
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_grenadier";
+                        rank = "PRIVATE";
+                        position[] = {-5,15,0};
+                    };
+                    class Unit4
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_at";
+                        rank = "PRIVATE";
+                        position[] = {-10,10,0};
+                    };
+                    class Unit5
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_life_scout";
+                        rank = "CORPORAL";
+                        position[] = {0,-10,0};
+                    };
+                    class Unit6
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_arifleman";
+                        rank = "PRIVATE";
+                        position[] = {-5,-15,0};
+                    };
+                    class Unit7
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_grenadier";
+                        rank = "PRIVATE";
+                        position[] = {5,-15,0};
+                    };
+                    class Unit8
+                    {
+                        side = 0;
+                        vehicle = "spagistan_soldier_garmsar_boys_at";
                         rank = "PRIVATE";
                         position[] = {10,-20,0};
                     };
