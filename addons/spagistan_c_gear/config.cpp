@@ -23,7 +23,7 @@ class CfgPatches
             "Headgear_spagistan_beret_red_spagistan",
             "Headgear_spagistan_beret_green",
             "Headgear_spagistan_beret_green_spagistan",
-            "Headgear_spagistan_patrolcap_spagpat",
+            "Item_spagistan_patrolcap_spagpat",
             "Headgear_spagistan_booniehat_spagpat",
             "Headgear_spagistan_cap_spagpat",
             "Item_spagistan_uniform_m10_spagpat",
