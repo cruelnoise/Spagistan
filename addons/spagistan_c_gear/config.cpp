@@ -10,7 +10,7 @@ class CfgPatches
         {
             "tfar_backpacks",
             "rhssaf_c_gear",
-            "rhsusf_c_troops",
+            "rhsusf_c_troops"
         };
         units[] = {
             "spagistan_TFAR_mr3000",
@@ -23,7 +23,9 @@ class CfgPatches
             "Headgear_spagistan_beret_red_spagistan",
             "Headgear_spagistan_beret_green",
             "Headgear_spagistan_beret_green_spagistan",
-            "Item_spagistan_patrolcap_spagpat",
+            "Headgear_spagistan_patrolcap_spagpat",
+            "Headgear_spagistan_booniehat_spagpat",
+            "Headgear_spagistan_cap_spagpat",
             "Item_spagistan_uniform_m10_spagpat",
             "Item_spagistan_uniform_m10_spagpat_summer",
             "Vest_spagistan_vest_md12_spagpat"
@@ -38,6 +40,8 @@ class CfgPatches
             "spagistan_beret_green",
             "spagistan_beret_green_spagistan",
             "spagistan_patrolcap_spagpat",
+            "spagistan_booniehat_spagpat",
+            "spagistan_cap_spagpat",
             "spagistan_uniform_m10_spagpat",
             "spagistan_uniform_m10_spagpat_summer",
             "spagistan_vest_md12_spagpat",
@@ -68,6 +72,7 @@ class CfgWeapons
     class rhssaf_uniform_m10_digital_summer;
     class rhssaf_uniform_m93_oakleaf;
     class rhssaf_vest_md12_digital;
+
     class LOP_U_AM_Fatigue_01;
     class LOP_U_AM_Fatigue_02;
     class LOP_U_AM_Fatigue_02_3;
@@ -75,6 +80,9 @@ class CfgWeapons
     class LOP_U_AM_Fatigue_03_3;
     class LOP_U_AM_Fatigue_04;
     class LOP_U_AM_Fatigue_04_3;
+
+    class H_Booniehat_khk;
+    class H_Cap_red;
 
     class spagistan_helmet_m97_spagpat: rhssaf_helmet_m97_woodland
     {
@@ -305,6 +313,28 @@ class CfgWeapons
 			mass=120;
 		};
     };
+
+    // gang gang
+    class spagistan_booniehat_spagpat: H_Booniehat_khk
+    {
+        dlc = "spagistan";
+        author = "Spagistan Mod Authors";
+        displayName = "Booniehat (Spagpat)"; //todo: consistency
+        hiddenSelectionsTextures[] =
+        {
+            "\spagistan\addons\spagistan_t_gear\data\spagistan_booniehat_spagpat_co.paa"
+        };
+    };
+    class spagistan_cap_spagpat: H_Cap_red
+    {
+        dlc = "spagistan";
+        author = "Spagistan Mod Authors";
+        displayName = "Cap (Spagpat)";
+        hiddenSelectionsTextures[] =
+        {
+            "\spagistan\addons\spagistan_t_gear\data\spagistan_cap_spagpat_co.paa"
+        };
+    };
 };
 
 class CfgVehicles
@@ -454,6 +484,34 @@ class CfgVehicles
             };
         };
     };
+    class Headgear_spagistan_booniehat_spagpat: spagistan_Headgear_Base_F
+    {
+		displayName="Booniehat (Spagpat)"; //todo: consistency
+		editorSubcategory="EdSubcat_Hats";
+		model="\A3\Weapons_F\DummyCap.p3d";
+		class TransportItems
+		{
+			class spagistan_booniehat_spagpat
+			{
+				name="spagistan_booniehat_spagpat";
+				count=1;
+			};
+		};
+	};
+    class Headgear_spagistan_cap_spagpat: spagistan_Headgear_Base_F
+    {
+		displayName="Cap (Spagpat)"; //todo: consistency
+		editorSubcategory="EdSubcat_Hats";
+		model="\A3\Weapons_F\DummyCap.p3d";
+		class TransportItems
+		{
+			class spagistan_booniehat_spagpat
+			{
+				name="spagistan_cap_spagpat";
+				count=1;
+			};
+		};
+	};
     class Item_Base_F;
     class spagistan_Item_Base_F: Item_Base_F
     {
@@ -533,4 +591,3 @@ class CfgVehicles
         };
     };
 };
-

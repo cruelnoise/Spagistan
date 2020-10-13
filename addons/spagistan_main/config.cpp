@@ -34,7 +34,8 @@ class CfgAddons
                 "spagistan_main_loadorder",
                 "spagistan_c_gear",
                 "spagistan_c_troops",
-                "spagistan_c_vehicles"
+                "spagistan_c_vehicles",
+                "spagistan_compat"
             };
         };
     };
