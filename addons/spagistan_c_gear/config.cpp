@@ -25,6 +25,8 @@ class CfgPatches
             "Headgear_spagistan_beret_green_spagistan",
             "Item_spagistan_patrolcap_spagpat",
             "Headgear_spagistan_booniehat_spagpat",
+            "Headgear_spagistan_booniehat_spagpat_tan_band",
+            "Headgear_spagistan_booniehat_spagpat_olive_band",
             "Headgear_spagistan_cap_spagpat",
             "Item_spagistan_uniform_m10_spagpat",
             "Item_spagistan_uniform_m10_spagpat_summer",
@@ -41,6 +43,8 @@ class CfgPatches
             "spagistan_beret_green_spagistan",
             "spagistan_patrolcap_spagpat",
             "spagistan_booniehat_spagpat",
+            "spagistan_booniehat_spagpat_tan_band",
+            "spagistan_booniehat_spagpat_olive_band",
             "spagistan_cap_spagpat",
             "spagistan_uniform_m10_spagpat",
             "spagistan_uniform_m10_spagpat_summer",
@@ -240,81 +244,81 @@ class CfgWeapons
     {
         scope = 1;
         class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_life_scout";
-			containerClass="Supply120";
-			mass=120;
-		};
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_life_scout";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_02: LOP_U_AM_Fatigue_02
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_eagle_scout";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_eagle_scout";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_02_3: LOP_U_AM_Fatigue_02_3
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_rifleman_m70";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_rifleman_m70";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_03_2: LOP_U_AM_Fatigue_03_2
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_at";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_at";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_03_3: LOP_U_AM_Fatigue_03_3
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_grenadier";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_grenadier";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_04: LOP_U_AM_Fatigue_04
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_arifleman";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_arifleman";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
     class spagistan_uniform_am_fatigue_04_3: LOP_U_AM_Fatigue_04_3
     {
         scope = 1;
-		class ItemInfo: UniformItem
-		{
-			uniformModel="-";
-			uniformClass="spagistan_soldier_garmsar_boys_rifleman_akm";
-			containerClass="Supply120";
-			mass=120;
-		};
+        class ItemInfo: UniformItem
+        {
+            uniformModel="-";
+            uniformClass="spagistan_soldier_garmsar_boys_rifleman_akm";
+            containerClass="Supply120";
+            mass=120;
+        };
     };
 
-    // gang gang
+    // In Testing
     class spagistan_booniehat_spagpat: H_Booniehat_khk
     {
         dlc = "spagistan";
@@ -323,6 +327,22 @@ class CfgWeapons
         hiddenSelectionsTextures[] =
         {
             "\spagistan\addons\spagistan_t_gear\data\spagistan_booniehat_spagpat_co.paa"
+        };
+    };
+    class spagistan_booniehat_spagpat_tan_band: spagistan_booniehat_spagpat
+    {
+        displayName = "Booniehat (Spagpat/Tan Band)"; //todo: consistency
+        hiddenSelectionsTextures[] =
+        {
+            "\spagistan\addons\spagistan_t_gear\data\spagistan_booniehat_spagpat_tan_band_co.paa"
+        };
+    };
+    class spagistan_booniehat_spagpat_olive_band: spagistan_booniehat_spagpat
+    {
+        displayName = "Booniehat (Spagpat/Olive Band)"; //todo: consistency
+        hiddenSelectionsTextures[] =
+        {
+            "\spagistan\addons\spagistan_t_gear\data\spagistan_booniehat_spagpat_olive_band_co.paa"
         };
     };
     class spagistan_cap_spagpat: H_Cap_red
@@ -486,32 +506,56 @@ class CfgVehicles
     };
     class Headgear_spagistan_booniehat_spagpat: spagistan_Headgear_Base_F
     {
-		displayName="Booniehat (Spagpat)"; //todo: consistency
-		editorSubcategory="EdSubcat_Hats";
-		model="\A3\Weapons_F\DummyCap.p3d";
-		class TransportItems
-		{
-			class spagistan_booniehat_spagpat
-			{
-				name="spagistan_booniehat_spagpat";
-				count=1;
-			};
-		};
-	};
+        displayName="Booniehat (Spagpat)"; //todo: consistency
+        editorSubcategory="EdSubcat_Hats";
+        model="\A3\Weapons_F\DummyCap.p3d";
+        class TransportItems
+        {
+            class spagistan_booniehat_spagpat
+            {
+                name="spagistan_booniehat_spagpat";
+                count=1;
+            };
+        };
+    };
+    class Headgear_spagistan_booniehat_spagpat_tan_band: Headgear_spagistan_booniehat_spagpat
+    {
+        displayName="Booniehat (Spagpat/Tan Band)"; //todo: consistency
+        class TransportItems
+        {
+            class spagistan_booniehat_spagpat_tan_band
+            {
+                name="spagistan_booniehat_spagpat_tan_band";
+                count=1;
+            };
+        };
+    };
+    class Headgear_spagistan_booniehat_spagpat_olive_band: Headgear_spagistan_booniehat_spagpat
+    {
+        displayName="Booniehat (Spagpat/Olive Band)"; //todo: consistency
+        class TransportItems
+        {
+            class spagistan_booniehat_spagpat_tan_band
+            {
+                name="spagistan_booniehat_spagpat_olive_band";
+                count=1;
+            };
+        };
+    };
     class Headgear_spagistan_cap_spagpat: spagistan_Headgear_Base_F
     {
-		displayName="Cap (Spagpat)"; //todo: consistency
-		editorSubcategory="EdSubcat_Hats";
-		model="\A3\Weapons_F\DummyCap.p3d";
-		class TransportItems
-		{
-			class spagistan_booniehat_spagpat
-			{
-				name="spagistan_cap_spagpat";
-				count=1;
-			};
-		};
-	};
+        displayName="Cap (Spagpat)"; //todo: consistency
+        editorSubcategory="EdSubcat_Hats";
+        model="\A3\Weapons_F\DummyCap.p3d";
+        class TransportItems
+        {
+            class spagistan_booniehat_spagpat
+            {
+                name="spagistan_cap_spagpat";
+                count=1;
+            };
+        };
+    };
     class Item_Base_F;
     class spagistan_Item_Base_F: Item_Base_F
     {
